@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#edf2f4"/>
+  <g transform="translate(54 58)"><g fill="#28536b"><rect width="46" height="46"/><rect x="52" width="46" height="46" opacity=".72"/><rect x="104" width="46" height="46" opacity=".36"/><rect y="52" width="46" height="46" opacity=".45"/><rect x="52" y="52" width="46" height="46" opacity=".9"/><rect x="104" y="52" width="46" height="46" opacity=".58"/><rect y="104" width="46" height="46" opacity=".8"/><rect x="52" y="104" width="46" height="46" opacity=".3"/><rect x="104" y="104" width="46" height="46" opacity=".68"/></g><g fill="#b65c32" transform="translate(0 166)"><rect width="46" height="46" opacity=".4"/><rect x="52" width="46" height="46" opacity=".82"/><rect x="104" width="46" height="46" opacity=".55"/><rect y="52" width="46" height="46" opacity=".9"/><rect x="52" y="52" width="46" height="46" opacity=".32"/><rect x="104" y="52" width="46" height="46" opacity=".68"/></g></g>
+  <g fill="none" stroke="#17212b" stroke-width="2"><path d="M240 76h76v246h-76zM340 101h62v196h-62zM426 128h48v142h-48z"/><path d="M204 178h36M316 178h24M402 178h24M474 178h74"/></g>
+  <circle cx="574" cy="178" r="42" fill="#3b88a8"/><text x="574" y="184" text-anchor="middle" fill="#fff" font-family="monospace" font-size="19">EOL</text>
+  <g font-family="monospace" fill="#17212b"><text x="54" y="34" font-size="15">3-CHANNEL EARLY-CYCLE FEATURE MAP</text><text x="530" y="360" font-size="13">REGRESSION HEAD</text></g>
+</svg>

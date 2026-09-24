@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#eef3f5"/>
+  <g stroke="#3b88a8" stroke-width="4" opacity=".72"><path d="M86 113l116 56 94-91 105 85 109-63 118 89M86 113l35 154 81-98 76 122 123-128 55 147 172-121M121 267l157 24 60 66 118-47 92 42 80-163M202 169l136 188M296 78l42 279M401 163l147 189M510 100l-54 210"/></g>
+  <g fill="#17212b" stroke="#f3f6f8" stroke-width="4"><circle cx="86" cy="113" r="18"/><circle cx="121" cy="267" r="25"/><circle cx="202" cy="169" r="31"/><circle cx="278" cy="291" r="20"/><circle cx="296" cy="78" r="24"/><circle cx="338" cy="357" r="17"/><circle cx="401" cy="163" r="33"/><circle cx="456" cy="310" r="25"/><circle cx="510" cy="100" r="20"/><circle cx="548" cy="352" r="17"/><circle cx="628" cy="189" r="29"/></g>
+  <g font-family="monospace" fill="#17212b"><text x="42" y="39" font-size="15">PORE–THROAT NETWORK / CONNECTIVITY = 3.64</text><text x="523" y="390" font-size="13">TRANSPORT →</text></g>
+</svg>

@@ -1,0 +1,31 @@
+{{ $cfg := site.Params.solitude }}
+{{ $description := or .Description .Summary site.Params.description site.Title }}
+{{ $pageTitle := cond (eq .Kind "404") "页面未找到" .Title }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>
+  (() => {
+    let mode = {{ $cfg.display_mode.type | jsonify | safeJS }};
+    try {
+      const stored = JSON.parse(localStorage.getItem("theme"));
+      if (stored?.value && (!stored.expiry || stored.expiry > Date.now())) mode = stored.value;
+      else if (stored) localStorage.removeItem("theme");
+    } catch (_) {}
+    if (mode === "auto") mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = mode === "dark" ? "dark" : "light";
+  })();
+</script>
+<meta name="description" content="{{ $description | plainify }}">
+<meta name="generator" content="Hugo {{ hugo.Version }}">
+<meta name="theme-color" content="#28536B">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ $pageTitle }} | {{ site.Title }}{{ end }}</title>
+<link rel="icon" href="{{ "/favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .RelPermalink }}">{{ end }}
+<meta property="og:title" content="{{ $pageTitle | default site.Title }}">
+<meta property="og:description" content="{{ $description | plainify }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if and .IsPage (eq .Section "posts") }}article{{ else }}website{{ end }}">
+{{ with .Params.cover }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ partial "styles.html" . }}
+{{ partial "config.html" . }}

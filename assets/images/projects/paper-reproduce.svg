@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#edf0f1"/>
+  <rect x="84" y="42" width="276" height="336" fill="#fff" stroke="#17212b" stroke-width="2"/><path d="M116 89h154M116 111h212M116 133h192" stroke="#5a6672"/><rect x="116" y="170" width="212" height="126" fill="#edf2f4"/><path d="M132 270l48-42 42 17 44-52 46 24" fill="none" stroke="#28536b" stroke-width="4"/><path d="M116 330h129" stroke="#5a6672"/>
+  <g fill="none" stroke="#b65c32" stroke-width="3"><path d="M410 92h218M410 154h173M410 216h203M410 278h146"/><circle cx="404" cy="92" r="7"/><circle cx="404" cy="154" r="7"/><circle cx="404" cy="216" r="7"/><circle cx="404" cy="278" r="7"/></g>
+  <g font-family="monospace" fill="#17212b"><text x="410" y="48" font-size="15">REPRODUCTION CHECKLIST</text><text x="424" y="86" font-size="13">METHOD</text><text x="424" y="148" font-size="13">DATA</text><text x="424" y="210" font-size="13">METRIC</text><text x="424" y="272" font-size="13">RESULT</text></g>
+</svg>

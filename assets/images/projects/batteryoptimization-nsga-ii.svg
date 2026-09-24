@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#edf2f4"/><path d="M72 54v294h580" fill="none" stroke="#17212b" stroke-width="2"/>
+  <g stroke="#c6d1d7"><path d="M72 276h580M72 204h580M72 132h580"/><path d="M188 54v294M304 54v294M420 54v294M536 54v294"/></g>
+  <path d="M112 306C179 296 232 267 285 234s108-90 165-113 102-31 158-35" fill="none" stroke="#b65c32" stroke-width="5"/>
+  <g fill="#28536b" stroke="#f3f6f8" stroke-width="3"><circle cx="112" cy="306" r="8"/><circle cx="190" cy="281" r="8"/><circle cx="263" cy="248" r="8"/><circle cx="332" cy="201" r="8"/><circle cx="402" cy="153" r="8"/><circle cx="478" cy="111" r="8"/><circle cx="558" cy="91" r="8"/><circle cx="608" cy="86" r="8"/></g>
+  <g font-family="monospace" fill="#17212b"><text x="72" y="32" font-size="15">PARETO FRONT / SE–SP</text><text x="570" y="380" font-size="13">SPECIFIC ENERGY</text><text x="23" y="205" font-size="13" transform="rotate(-90 23 205)">SPECIFIC POWER</text></g>
+</svg>

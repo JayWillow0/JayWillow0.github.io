@@ -1,0 +1,48 @@
+{{ define "main" }}
+{{ $repos := hugo.Data.generated.github_repos }}
+{{ $overrides := hugo.Data.project_overrides.projects }}
+{{ $categories := slice "电化学、多物理场与优化" "电极结构与孔隙网络" "寿命预测与智能算法" "科研复现与工程化" }}
+{{ $known := slice }}{{ range $overrides }}{{ $known = $known | append .slug }}{{ end }}
+<main id="content-inner" class="lab-page project-gallery">
+  <header class="lab-page-header">
+    <p class="lab-kicker">OPEN RESEARCH PORTFOLIO</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+    <div class="lab-page-header__meta"><span>{{ len $repos }} 个原创仓库</span><span>数据随站点构建同步</span><span>Fork 不进入策展</span></div>
+  </header>
+
+  {{ range $categories }}
+    {{ $category := . }}
+    {{ $items := sort (where $overrides "category" $category) "order" }}
+    {{ if $items }}
+      <section class="gallery-section" aria-labelledby="category-{{ $category | anchorize }}">
+        <header class="gallery-section__header"><h2 id="category-{{ $category | anchorize }}">{{ $category }}</h2><span>{{ len $items }} PROJECT{{ if gt (len $items) 1 }}S{{ end }}</span></header>
+        <div class="project-grid">
+          {{ range $items }}
+            {{ $curation := . }}
+            {{ range first 1 (where $repos "name" .slug) }}{{ partial "lab/project-card.html" (dict "repo" . "curation" $curation) }}{{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{ $uncurated := slice }}{{ range $repos }}{{ if not (in $known .name) }}{{ $uncurated = $uncurated | append . }}{{ end }}{{ end }}
+  {{ if $uncurated }}
+    <section class="gallery-section" aria-labelledby="category-pending">
+      <header class="gallery-section__header"><h2 id="category-pending">待策展</h2><span>{{ len $uncurated }} PROJECTS</span></header>
+      <div class="project-grid">
+        {{ range $uncurated }}
+          {{ $fallback := dict "order" 99 "curator_summary" .description "methods" .topics "cover" "images/projects/project-fallback.png" "accent" "#5A6672" }}
+          {{ partial "lab/project-card.html" (dict "repo" . "curation" $fallback) }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  <aside class="github-index-callout">
+    <div><p>COMPLETE GITHUB INDEX</p><h2>Fork 与收藏项目仍保留在 GitHub。</h2><span>站内画廊只展示原创研究工程，完整公开仓库可在 GitHub 账号中查看。</span></div>
+    <a class="lab-button lab-button--primary" href="https://github.com/JayWillow0?tab=repositories" target="_blank" rel="noopener noreferrer">查看全部公开仓库 ↗</a>
+  </aside>
+</main>
+{{ end }}

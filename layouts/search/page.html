@@ -1,0 +1,6 @@
+{{ define "main" }}
+<main id="content-inner" class="lab-page search-page">
+  <header class="lab-page-header"><p class="lab-kicker">LOCAL SEARCH</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></header>
+  <div class="lab-empty lab-empty--large"><span>INDEX / LOCAL</span><h2>搜索研究札记</h2><p>搜索索引在构建时生成，查询只在当前浏览器中完成，不上传关键词。</p><button class="lab-button lab-button--primary" type="button" onclick="window.Solitude?.openSearch?.()">打开搜索</button><small>快捷键：Ctrl / Command + K</small></div>
+</main>
+{{ end }}

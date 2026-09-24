@@ -1,0 +1,27 @@
+{{ $repo := .repo }}
+{{ $curation := .curation }}
+{{ $coverPath := $curation.cover | default "images/projects/project-fallback.png" }}
+{{ $cover := resources.Get $coverPath }}
+{{ $coverDisplay := $cover.Fit "1200x800 webp q82" }}
+<article class="project-card" data-project-slug="{{ $repo.name }}" style="--project-accent: {{ $curation.accent | default "#28536B" }}">
+  <a class="project-card__cover" href="{{ $repo.url }}" target="_blank" rel="noopener noreferrer" aria-label="打开 {{ $repo.name }} GitHub 仓库">
+    {{ with $coverDisplay }}<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" alt="{{ $repo.name }} 科研示意图">{{ end }}
+    <span class="project-card__index">{{ printf "%02d" ($curation.order | default 99) }}</span>
+  </a>
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span>{{ $repo.language | default "Research" }}</span>
+      {{ with $repo.updated_at }}<time datetime="{{ . }}">{{ (time.AsTime .).Format "2006.01.02" }}</time>{{ end }}
+    </div>
+    <h3><a href="{{ $repo.url }}" target="_blank" rel="noopener noreferrer">{{ $repo.name }}</a></h3>
+    <p>{{ $curation.curator_summary | default $repo.description | default "该项目尚待补充策展说明。" }}</p>
+    <ul class="method-list" aria-label="项目方法">
+      {{ $methods := $curation.methods | default $repo.topics }}
+      {{ range $methods }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <div class="project-card__footer">
+      <span>★ {{ $repo.stars }} · Fork {{ $repo.forks }}</span>
+      <a href="{{ $repo.url }}" target="_blank" rel="noopener noreferrer">查看源码 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</article>

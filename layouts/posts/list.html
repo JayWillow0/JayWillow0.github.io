@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main id="content-inner" class="lab-page notes-page">
+  <header class="lab-page-header"><p class="lab-kicker">RESEARCH NOTEBOOK</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></header>
+  {{ if .Pages }}
+    <div class="note-list note-list--page">
+      {{ range .Pages.ByDate.Reverse }}
+        <article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><div><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Description }}</p><ul class="method-list">{{ range .Params.tags }}<li>{{ . }}</li>{{ end }}</ul></div></article>
+      {{ end }}
+    </div>
+  {{ else }}
+    <div class="lab-empty lab-empty--large"><span>NOTEBOOK / 000</span><h2>第一篇札记尚未发布</h2><p>后续将在这里记录模型假设、数据处理、论文复现和工程判断。内容通过 Markdown 页面包持续维护。</p></div>
+  {{ end }}
+</main>
+{{ end }}

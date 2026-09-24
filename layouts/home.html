@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ $repos := hugo.Data.generated.github_repos }}
+{{ $overrides := hugo.Data.project_overrides.projects }}
+{{ $hero := resources.Get "images/lab-hero.png" }}
+{{ $heroDisplay := $hero.Fit "1440x960 webp q84" }}
+<main id="content-inner" class="lab-home">
+  <section class="lab-hero" aria-labelledby="lab-hero-title">
+    <div class="lab-hero__copy">
+      <p class="lab-kicker">ENERGY STORAGE · COMPUTATION · INTELLIGENCE</p>
+      <h1 id="lab-hero-title"><span>把电池里的场，</span><span>变成可以验证的模型。</span></h1>
+      <p class="lab-hero__lead">储能电化学 · 多物理场仿真 · 智能算法</p>
+      <p class="lab-hero__note">记录从机理建模、参数标定到寿命预测的研究工程，也保留失败、复现与迭代。</p>
+      <div class="lab-actions">
+        <a class="lab-button lab-button--primary" href="{{ "/projects/" | relURL }}">进入项目画廊</a>
+        <a class="lab-button" href="{{ "/about/" | relURL }}">了解研究方向</a>
+      </div>
+    </div>
+    <figure class="lab-hero__figure">
+      {{ with $heroDisplay }}<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="磷酸铁锂电池电极、隔膜及温度与浓度场的工程示意图">{{ end }}
+      <figcaption>FIG. 01 · CELL-LEVEL MULTIPHYSICS FIELD</figcaption>
+    </figure>
+  </section>
+
+  <section class="research-index" aria-labelledby="research-index-title">
+    <header class="lab-section-heading">
+      <p>RESEARCH INDEX</p>
+      <h2 id="research-index-title">研究不是标签，是彼此耦合的问题。</h2>
+    </header>
+    <ol class="research-index__grid">
+      <li><span>01 / PHYSICS</span><h3>电化学与热</h3><p>从反应动力学、传质与发热机制建立可解释模型。</p></li>
+      <li><span>02 / STRUCTURE</span><h3>电极与孔隙</h3><p>连接制造变量、微结构和宏观性能。</p></li>
+      <li><span>03 / LIFE</span><h3>老化与寿命</h3><p>辨识退化规律，评估早期信号的预测边界。</p></li>
+      <li><span>04 / COMPUTATION</span><h3>代理模型与优化</h3><p>在计算成本、精度和工程决策之间取得平衡。</p></li>
+    </ol>
+  </section>
+
+  <section class="featured-projects" aria-labelledby="featured-projects-title">
+    <header class="lab-section-heading lab-section-heading--split">
+      <div><p>SELECTED WORK</p><h2 id="featured-projects-title">公开项目</h2></div>
+      <a href="{{ "/projects/" | relURL }}">查看全部原创项目 <span aria-hidden="true">→</span></a>
+    </header>
+    <div class="project-grid project-grid--featured">
+      {{ range first 4 (sort (where $overrides "featured" true) "order") }}
+        {{ $curation := . }}
+        {{ range first 1 (where $repos "name" .slug) }}
+          {{ partial "lab/project-card.html" (dict "repo" . "curation" $curation) }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="lab-notes" aria-labelledby="lab-notes-title">
+    <header class="lab-section-heading"><p>FIELD NOTES</p><h2 id="lab-notes-title">研究札记</h2></header>
+    {{ $posts := first 3 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+    {{ if $posts }}
+      <div class="note-list">{{ range $posts }}<article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Description }}</p></article>{{ end }}</div>
+    {{ else }}
+      <div class="lab-empty"><span>NOTEBOOK / 000</span><p>研究札记尚未发布。这里将记录模型假设、复现过程和工程判断。</p><a href="{{ "/posts/" | relURL }}">查看内容结构</a></div>
+    {{ end }}
+  </section>
+</main>
+{{ end }}

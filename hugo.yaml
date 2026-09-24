@@ -1,0 +1,259 @@
+baseURL: https://jaywillow0.github.io/
+title: LiuYang Lab
+copyright: © 2026 LiuYang
+locale: zh-CN
+defaultContentLanguage: zh-cn
+timeZone: Asia/Shanghai
+enableRobotsTXT: true
+enableGitInfo: false
+theme: solitude
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+pagination:
+  pagerSize: 10
+
+permalinks:
+  posts: /posts/:slug/
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home: [HTML, RSS, Search, Links]
+  section: [HTML, RSS]
+  taxonomy: [HTML, RSS]
+  term: [HTML, RSS]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    lineNos: false
+    codeFences: true
+    guessSyntax: true
+
+menus:
+  main:
+    - name: 首页
+      pageRef: /
+      weight: 10
+    - name: 项目
+      pageRef: /projects
+      weight: 20
+    - name: 文章
+      pageRef: /posts
+      weight: 30
+    - name: 公众号
+      pageRef: /wechat
+      weight: 40
+    - name: 关于
+      pageRef: /about
+      weight: 50
+    - name: GitHub
+      url: https://github.com/JayWillow0
+      weight: 60
+
+params:
+  author:
+    name: LiuYang
+  description: 储能电化学、多物理场仿真与智能算法的个人研究博客
+  solitude:
+    site:
+      name:
+        class: text
+        custom: LiuYang Lab
+      icon: /favicon.svg
+    nav:
+      group: {}
+      right:
+        random: false
+        custom: []
+    hometop:
+      enable: false
+    aside:
+      position: 1
+      home:
+        noSticky: ""
+        Sticky: ""
+      post:
+        noSticky: ""
+        Sticky: ""
+      page:
+        noSticky: ""
+        Sticky: ""
+      toc:
+        post: true
+        page: false
+        vague: false
+      tags:
+        enable: false
+      siteinfo:
+        runtimeenable: false
+    post:
+      default:
+        cover: [/images/default-cover.svg]
+        locate: ""
+        copyright:
+          enable: true
+          author: /favicon.svg
+          author_background: ""
+          license: CC BY-NC-SA 4.0
+          licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/
+      meta:
+        date: true
+        updated: true
+        locate: false
+        wordcount: true
+        readtime: true
+        pv: false
+        comment: false
+      share:
+        enable: false
+        list: []
+      covercolor:
+        enable: false
+    page:
+      error: true
+      tags: true
+      categories: true
+      archives: 0
+      default:
+        cover: [/images/default-cover.svg]
+    theme_color:
+      light: "#28536B"
+      dark: "#3B88A8"
+      nav_hover_text:
+        light: "#FFFFFF"
+        dark: "#FFFFFF"
+    display_mode:
+      type: auto
+    font:
+      font_size: 16px
+      code_font_size: 15px
+      font_family: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif"
+      code_font_family: "'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace"
+    index_post_list:
+      direction: column
+      column: 1
+      cover: both
+    related_post:
+      enable: true
+      limit: 3
+    right_menu:
+      enable: false
+    copy:
+      enable: true
+      copyright:
+        enable: false
+    mermaid: false
+    chart: false
+    typeit: false
+    console:
+      enable: false
+    rightside:
+      enable: true
+      hide:
+        enable: false
+        translate: true
+        mode: false
+        aside: true
+    footer:
+      randomlink: false
+      information:
+        author: /favicon.svg
+        left:
+          - name: GitHub
+            url: https://github.com/JayWillow0
+            icon: fab fa-github
+        right:
+          - name: RSS
+            url: /index.xml
+            icon: fas fa-rss
+      group:
+        研究:
+          - name: 项目画廊
+            url: /projects/
+          - name: 研究札记
+            url: /posts/
+        内容:
+          - name: 公众号
+            url: /wechat/
+          - name: 关于
+            url: /about/
+        索引:
+          - name: 分类
+            url: /categories/
+          - name: 标签
+            url: /tags/
+      links: []
+    capsule:
+      enable: false
+    music:
+      enable: false
+    keyboard:
+      enable: false
+    lazyload:
+      enable: false
+    loading:
+      fullpage: false
+      pace: false
+    highlight:
+      enable: false
+      copy: true
+      line_numbers: false
+    lightbox: false
+    katex:
+      enable: false
+      per_page: false
+      copytex: false
+    pwa:
+      enable: false
+    comment:
+      use: ""
+      commentBarrage: false
+      count: false
+      sidebar: false
+      pv: false
+    search:
+      enable: true
+      type: local
+      tags: [电化学仿真, 多物理场仿真, 电池寿命, 机器学习]
+      local:
+        preload: true
+        CDN: /search.xml
+    cdn:
+      shiki: ""
+      fontawesome: ""
+      pjax: ""
+      snackbar: /js/snackbar-lite.js
+      lazyload: ""
+      fancyapps_css: ""
+      fancyapps_js: ""
+      mermaid: ""
+      chart: ""
+      abcjs: ""
+      typeit: ""
+      katex_css: ""
+      katex_copytex: ""
+      aplayer_css: ""
+      aplayer_js: ""
+      meting_js: ""
+      colorthief: ""
+      twikoo: ""
+      waline_css: ""
+      waline: ""
+      valine: ""
+      blueimp_md5: ""
+      artalk_css: ""
+      artalk: ""
+      algoliasearch: ""
+      instantsearch_css: ""
+      instantsearch: ""
+      docsearch_css: ""
+      docsearch_js: ""

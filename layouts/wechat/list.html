@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main id="content-inner" class="lab-page wechat-page">
+  <header class="lab-page-header"><p class="lab-kicker">WECHAT PUBLICATIONS</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></header>
+  <section class="wechat-profile" aria-labelledby="wechat-account-title">
+    <div><p class="lab-kicker">WECHAT ACCOUNT</p><h2 id="wechat-account-title">{{ .Params.wechat_account }}</h2></div>
+    <p>公众号文章仍在微信内发布，本站负责整理标题、摘要、研究分类与原文链接。</p>
+  </section>
+  {{ if .Pages }}
+    <div class="wechat-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        <article class="wechat-card"><div class="wechat-card__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span>{{ .Params.wechat_account }}</span></div><h2>{{ .Title }}</h2><p>{{ .Description | default .Summary }}</p><a href="{{ .Params.external_url }}" target="_blank" rel="noopener noreferrer">阅读公众号原文 ↗</a></article>
+      {{ end }}
+    </div>
+  {{ else }}
+    <div class="lab-empty lab-empty--large"><span>WECHAT / PENDING</span><h2>文章索引正在整理</h2><p>公众号已经登记。后续提供文章链接或本地草稿后，即可按发布日期建立索引；本站只保存标题、摘要和原文外链，不抓取公众号全文。</p></div>
+  {{ end }}
+</main>
+{{ end }}

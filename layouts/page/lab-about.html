@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main id="content-inner" class="lab-page about-page">
+  <header class="lab-page-header"><p class="lab-kicker">PROFILE / RESEARCH PRACTICE</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></header>
+  <div class="about-layout">
+    <aside class="about-identity"><span class="about-identity__mark">LY</span><p>LiuYang Lab</p><small>Electrochemistry<br>Multiphysics<br>Intelligent Algorithms</small></aside>
+    <article class="article-container about-content">{{ .Content }}</article>
+  </div>
+</main>
+{{ end }}

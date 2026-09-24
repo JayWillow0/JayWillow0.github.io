@@ -1,0 +1,6 @@
+{{ define "main" }}
+<main id="content-inner" class="lab-page error-page">
+  <div class="error-plot" aria-hidden="true"><span>404</span><svg viewBox="0 0 600 220"><path d="M0 128 C70 128 83 128 118 128 C146 128 151 38 184 38 C219 38 222 181 260 181 C294 181 301 89 335 89 C372 89 378 144 412 144 C448 144 462 128 600 128"/><line x1="0" y1="128" x2="600" y2="128"/></svg></div>
+  <div class="lab-empty"><span>SIGNAL / NOT FOUND</span><h1>这里没有可解析的信号。</h1><p>链接可能已经变更，或内容尚未发布。</p><a class="lab-button lab-button--primary" href="{{ "/" | relURL }}">返回首页</a></div>
+</main>
+{{ end }}

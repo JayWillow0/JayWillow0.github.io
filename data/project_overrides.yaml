@@ -1,0 +1,65 @@
+projects:
+  - slug: BatteryOptimization-NSGA-II
+    category: 电化学、多物理场与优化
+    featured: true
+    order: 10
+    curator_summary: 从实验标定的 P2D 模型出发，用高斯过程代理模型降低计算成本，再以 NSGA-II 求解比能量与比功率之间的 Pareto 前沿。
+    methods: [P2D, GPR, NSGA-II, Pareto]
+    cover: images/projects/batteryoptimization-nsga-ii.png
+    accent: "#B65C32"
+  - slug: ElectrodeReconstruction-matlab
+    category: 电极结构与孔隙网络
+    featured: true
+    order: 20
+    curator_summary: 面向磷酸铁锂电极工艺变量建立 MATLAB 重构流程，把辊压间隙、组分配比和初始孔隙率映射为可计算的结构表征。
+    methods: [MATLAB, Electrode, Porosity]
+    cover: images/projects/electrodereconstruction-matlab.png
+    accent: "#28536B"
+  - slug: pore-network-model-application
+    category: 电极结构与孔隙网络
+    featured: true
+    order: 30
+    curator_summary: 用任意形状颗粒网络与 PNC 方法重建孔喉结构，并以物种无关接口耦合传质和反应计算。
+    methods: [Pore Network, Transport, Reaction]
+    cover: images/projects/pore-network-model-application.png
+    accent: "#3B88A8"
+  - slug: CNN-for-Battery-SOH
+    category: 寿命预测与智能算法
+    featured: true
+    order: 40
+    curator_summary: 将电池早期放电循环编码成三通道特征图，比较多种二维卷积网络对循环寿命的回归预测能力。
+    methods: [PyTorch, 2D-CNN, EOL]
+    cover: images/projects/cnn-for-battery-soh.png
+    accent: "#28536B"
+  - slug: BatteryAging_matlab
+    category: 寿命预测与智能算法
+    featured: false
+    order: 50
+    curator_summary: 基于公开电化学研究构建日历老化与循环老化计算程序，用可解释表达式描述温度、SOC 与循环条件的影响。
+    methods: [MATLAB, Aging, Symbolic Regression]
+    cover: images/projects/batteryaging-matlab.png
+    accent: "#B65C32"
+  - slug: nature-energy2019
+    category: 寿命预测与智能算法
+    featured: false
+    order: 60
+    curator_summary: 对早期循环数据预测电池寿命的经典研究进行非官方复现，保留数据处理、特征和模型评估链路。
+    methods: [Machine Learning, Reproduction, Cycle Life]
+    cover: images/projects/nature-energy2019.png
+    accent: "#3B88A8"
+  - slug: paper-reproduce
+    category: 科研复现与工程化
+    featured: false
+    order: 70
+    curator_summary: 集中维护论文复现代码和实验记录，把公式、数据处理和结果核对组织成可重复执行的研究资产。
+    methods: [Reproduction, Verification, Python]
+    cover: images/projects/paper-reproduce.png
+    accent: "#5A6672"
+  - slug: ml-dev
+    category: 科研复现与工程化
+    featured: false
+    order: 80
+    curator_summary: 记录机器学习平台的开发过程，以可运行页面串联需求、实现、验证和迭代决策。
+    methods: [Django, ML Platform, Engineering Log]
+    cover: images/projects/ml-dev.png
+    accent: "#28536B"

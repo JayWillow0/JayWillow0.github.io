@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">电池多物理场剖面</title>
+  <desc id="desc">负极、隔膜和正极的分层剖面上叠加温度与浓度等高线及工程参数。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafb"/><stop offset="1" stop-color="#e8eef1"/></linearGradient>
+    <linearGradient id="heat" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#28536b"/><stop offset=".48" stop-color="#3b88a8"/><stop offset=".7" stop-color="#d5a35b"/><stop offset="1" stop-color="#b65c32"/></linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2.5" fill="#17212b" opacity=".22"/><circle cx="24" cy="20" r="4" fill="#17212b" opacity=".14"/></pattern>
+    <clipPath id="cell"><rect x="92" y="184" width="776" height="328" rx="2"/></clipPath>
+  </defs>
+  <style>
+    #field-scan{animation:scan 7s ease-in-out infinite}@keyframes scan{0%,100%{transform:translateX(-70px);opacity:.1}50%{transform:translateX(690px);opacity:.55}}@media(prefers-reduced-motion:reduce){#field-scan{animation:none;opacity:.24}}
+  </style>
+  <rect width="960" height="720" fill="url(#paper)"/>
+  <g fill="none" stroke="#c6d1d7"><path d="M52 76h856M52 642h856"/><path d="M52 76v566M908 76v566"/></g>
+  <g font-family="monospace" fill="#5a6672"><text x="52" y="54" font-size="15">FIG. 01 / COUPLED ELECTROCHEMICAL–THERMAL FIELD</text><text x="748" y="54" font-size="15">T = 298.15 K</text></g>
+  <g clip-path="url(#cell)">
+    <rect x="92" y="184" width="270" height="328" fill="#dce7ec"/>
+    <rect x="362" y="184" width="154" height="328" fill="#f4f6ee"/>
+    <rect x="516" y="184" width="352" height="328" fill="#ead7cb"/>
+    <rect x="92" y="184" width="270" height="328" fill="url(#dots)"/>
+    <rect x="516" y="184" width="352" height="328" fill="url(#dots)" opacity=".72"/>
+    <g fill="none" stroke-width="2" opacity=".72">
+      <path d="M30 250C202 113 337 369 487 232s304 60 470-74" stroke="#28536b"/>
+      <path d="M20 315C172 174 345 429 510 282s281 69 463-59" stroke="#3b88a8"/>
+      <path d="M17 387C198 231 338 498 519 343s278 68 459-48" stroke="#b65c32"/>
+      <path d="M0 459C183 302 375 551 550 413s270 27 420-20" stroke="#b65c32" opacity=".58"/>
+    </g>
+    <rect id="field-scan" x="118" y="184" width="72" height="328" fill="url(#heat)" opacity=".3"/>
+  </g>
+  <rect x="92" y="184" width="776" height="328" fill="none" stroke="#17212b" stroke-width="2"/>
+  <g stroke="#17212b" stroke-width="1.5"><path d="M362 184v328M516 184v328"/><path d="M92 534h776"/><path d="M92 528v12M362 528v12M516 528v12M868 528v12"/></g>
+  <g font-family="monospace" fill="#17212b" font-size="15"><text x="176" y="568">ANODE / x₁</text><text x="386" y="568">SEP. / x₂</text><text x="645" y="568">CATHODE / x₃</text></g>
+  <g font-family="monospace" font-size="14"><rect x="92" y="605" width="776" height="12" fill="url(#heat)"/><text x="92" y="636" fill="#28536b">cₑ,min</text><text x="797" y="636" fill="#b65c32">cₑ,max</text></g>
+  <g fill="#17212b" font-family="monospace" font-size="14"><circle cx="118" cy="150" r="4" fill="#b65c32"/><text x="132" y="155">q̇ = qᵣ + qₒₕₘ + qᵣₑᵥ</text><circle cx="573" cy="150" r="4" fill="#3b88a8"/><text x="587" y="155">∂cₑ/∂t = ∇·(Dₑ∇cₑ) + S</text></g>
+  <g fill="none" stroke="#5a6672"><path d="M75 184H52v328h23"/><path d="M884 184h24v328h-24"/></g>
+  <g font-family="monospace" fill="#5a6672" font-size="13"><text x="16" y="349" transform="rotate(-90 16 349)">THICKNESS / μm</text><text x="926" y="362" transform="rotate(90 926 362)">TEMPERATURE / K</text></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#e9f0f3"/>
+  <g fill="#28536b" opacity=".82"><circle cx="95" cy="99" r="36"/><circle cx="169" cy="76" r="27"/><circle cx="233" cy="112" r="41"/><circle cx="323" cy="74" r="33"/><circle cx="405" cy="112" r="48"/><circle cx="504" cy="76" r="34"/><circle cx="596" cy="111" r="45"/><circle cx="653" cy="62" r="22"/><circle cx="121" cy="188" r="45"/><circle cx="221" cy="191" r="39"/><circle cx="307" cy="172" r="32"/><circle cx="367" cy="217" r="43"/><circle cx="468" cy="199" r="40"/><circle cx="560" cy="190" r="36"/><circle cx="642" cy="216" r="41"/><circle cx="83" cy="287" r="39"/><circle cx="171" cy="279" r="41"/><circle cx="270" cy="295" r="48"/><circle cx="372" cy="300" r="39"/><circle cx="459" cy="286" r="34"/><circle cx="538" cy="301" r="42"/><circle cx="629" cy="293" r="36"/></g>
+  <g fill="none" stroke="#b65c32" stroke-width="3" opacity=".85"><path d="M58 138c75 8 91-29 142-1s76 66 142 38 93-35 151-7 98 18 171-5"/><path d="M66 248c68-33 107 7 159-5s87-21 145 5 91 13 142-11 91-10 151 10"/></g>
+  <g font-family="monospace" fill="#17212b"><text x="42" y="380" font-size="15">ELECTRODE RECONSTRUCTION / ε = 0.327</text><text x="567" y="380" font-size="13">Δx = 4 μm</text></g>
+</svg>

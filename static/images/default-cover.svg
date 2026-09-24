@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#17212b"/>
+  <g fill="none" stroke="#3b88a8" stroke-width="2" opacity=".55"><path d="M0 420C240 300 360 520 600 380s360 90 600-60"/><path d="M0 470C250 360 390 560 650 420s350 30 550-40"/><path d="M0 360c250-130 370 70 610-60s350 100 590-40"/></g>
+  <text x="80" y="110" fill="#f3f6f8" font-family="monospace" font-size="32">LIUYANG LAB / RESEARCH NOTE</text>
+  <text x="80" y="555" fill="#b65c32" font-family="monospace" font-size="20">ELECTROCHEMISTRY · MULTIPHYSICS · INTELLIGENCE</text>
+</svg>

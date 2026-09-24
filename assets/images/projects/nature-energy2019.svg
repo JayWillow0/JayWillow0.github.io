@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#edf2f4"/>
+  <g fill="none" stroke="#c6d1d7"><path d="M70 65v292h590"/><path d="M70 290h590M70 223h590M70 156h590"/></g>
+  <g fill="none" stroke="#3b88a8" stroke-width="2" opacity=".52"><path d="M70 92c95 4 168 3 238 10s135 34 175 88 62 136 177 157"/><path d="M70 105c121-2 196 5 262 19s119 51 155 101 77 107 173 118"/><path d="M70 82c111 7 187 8 253 17s122 31 167 75 75 136 170 166"/></g>
+  <path d="M70 94c116 2 198 6 268 20s126 42 164 91 66 111 158 135" fill="none" stroke="#b65c32" stroke-width="5"/>
+  <g font-family="monospace" fill="#17212b"><text x="70" y="36" font-size="15">EARLY-CYCLE TRAJECTORIES / REPRODUCTION</text><text x="541" y="387" font-size="13">CYCLE INDEX</text></g>
+</svg>

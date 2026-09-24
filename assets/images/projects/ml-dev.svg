@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#edf2f4"/>
+  <g fill="#fff" stroke="#28536b" stroke-width="2"><rect x="48" y="154" width="140" height="84" rx="3"/><rect x="290" y="66" width="140" height="84" rx="3"/><rect x="290" y="244" width="140" height="84" rx="3"/><rect x="532" y="154" width="140" height="84" rx="3"/></g>
+  <g fill="none" stroke="#b65c32" stroke-width="3"><path d="M188 196h61c24 0 20-88 41-88"/><path d="M188 196h61c24 0 20 90 41 90"/><path d="M430 108c28 0 44 88 62 88h40"/><path d="M430 286c28 0 44-90 62-90h40"/></g>
+  <g font-family="monospace" fill="#17212b" font-size="15" text-anchor="middle"><text x="118" y="189">DATA</text><text x="118" y="211">CONTRACT</text><text x="360" y="101">TRAIN</text><text x="360" y="123">PIPELINE</text><text x="360" y="279">EVAL</text><text x="360" y="301">REPORT</text><text x="602" y="189">MODEL</text><text x="602" y="211">SERVICE</text></g>
+  <text x="48" y="41" font-family="monospace" fill="#17212b" font-size="15">ML ENGINEERING / DEVELOPMENT LOG</text>
+</svg>

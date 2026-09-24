@@ -1,0 +1,90 @@
+[
+  {
+    "name": "BatteryAging_matlab",
+    "url": "https://github.com/JayWillow0/BatteryAging_matlab",
+    "description": "本仓库是利用Matlab实现锂电池日历&循环老化的程序，程序主要参考文献：Paul Gasper et al 2021 J. Electrochem. Soc. 168 020502 & Paul Gasper et al 2022 J. Electrochem. Soc. 169 080518.",
+    "language": "MATLAB",
+    "topics": ["battery-aging-prediction", "symbolic-regression"],
+    "stars": 1,
+    "forks": 2,
+    "updated_at": "2026-07-29T09:21:39Z",
+    "fork": false
+  },
+  {
+    "name": "BatteryOptimization-NSGA-II",
+    "url": "https://github.com/JayWillow0/BatteryOptimization-NSGA-II",
+    "description": "基于实验数据标定的P2D电化学模型，结合机器学习代理模型（GPR）与 NSGA-II 遗传算法，对磷酸铁锂（LFP）电池的比能量（SE）—比功率（SP）进行多目标优化，求解 Pareto 前沿。",
+    "language": "Python",
+    "topics": ["battery-optimization", "nsga-ii", "p2d", "surrogate-modeling"],
+    "stars": 3,
+    "forks": 2,
+    "updated_at": "2026-08-07T02:14:11Z",
+    "fork": false
+  },
+  {
+    "name": "CNN-for-Battery-SOH",
+    "url": "https://github.com/JayWillow0/CNN-for-Battery-SOH",
+    "description": "基于二维卷积神经网络（2D-CNN）的磷酸铁锂（LFP）电池循环寿命（EOL）预测：将电池早期放电循环数据编码为三通道特征图像，用多种 CNN 做回归预测。",
+    "language": "Python",
+    "topics": ["cnn", "pytorch", "soh-prediction"],
+    "stars": 3,
+    "forks": 2,
+    "updated_at": "2026-08-25T08:43:30Z",
+    "fork": false
+  },
+  {
+    "name": "ElectrodeReconstruction-matlab",
+    "url": "https://github.com/JayWillow0/ElectrodeReconstruction-matlab",
+    "description": "本仓库为 MATLAB 实现，研究对象为磷酸铁锂（LFP）储能电池电极，工艺变量覆盖辊压间隙、组分配比与初始孔隙率",
+    "language": "MATLAB",
+    "topics": ["electrode-reconstruction", "li-ion"],
+    "stars": 1,
+    "forks": 2,
+    "updated_at": "2026-09-21T16:05:42Z",
+    "fork": false
+  },
+  {
+    "name": "ml-dev",
+    "url": "https://github.com/JayWillow0/ml-dev",
+    "description": "Vibe coding开发日志博客（机器学习平台）",
+    "language": "HTML",
+    "topics": ["django-project", "vibe-coding"],
+    "stars": 0,
+    "forks": 1,
+    "updated_at": "2026-06-24T03:32:22Z",
+    "fork": false
+  },
+  {
+    "name": "nature-energy2019",
+    "url": "https://github.com/JayWillow0/nature-energy2019",
+    "description": "The code in this repository is unofficial implementation of 'Data driven prediciton of battery cycle life before capacity degradation' by K.A. Severson, P.M. Attia, et al",
+    "language": "Python",
+    "topics": ["battery-life-prediction", "machine-learning"],
+    "stars": 0,
+    "forks": 2,
+    "updated_at": "2026-06-24T02:11:18Z",
+    "fork": false
+  },
+  {
+    "name": "paper-reproduce",
+    "url": "https://github.com/JayWillow0/paper-reproduce",
+    "description": "学术论文复现代码仓库",
+    "language": "Python",
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "updated_at": "2026-09-01T08:28:59Z",
+    "fork": false
+  },
+  {
+    "name": "pore-network-model-application",
+    "url": "https://github.com/JayWillow0/pore-network-model-application",
+    "description": "本项目实现了一套面向多孔催化剂颗粒的 Python 孔喉网络计算框架。几何部分基于 Ye 等人提出的任意形状颗粒网络生成与 PNC（pore-network cutting）方法；传质和反应部分重新设计为物种无关接口，并以 A301 催化剂上的高压合成氨为示例。",
+    "language": "Python",
+    "topics": [],
+    "stars": 0,
+    "forks": 1,
+    "updated_at": "2026-07-22T07:47:27Z",
+    "fork": false
+  }
+]
