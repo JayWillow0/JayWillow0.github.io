@@ -20,6 +20,7 @@
 - `data/project_overrides.yaml`：原创仓库的人工策展信息。
 - `data/generated/`：脚本生成或刷新的数据，只能由脚本维护。
 - `assets/images/projects/<repo-slug>.*`：项目封面与科研示意图。
+- `assets/images/wechat/<article-slug>.*`：公众号文章封面；从原文获取后自托管，不运行时引用微信图片。
 - `assets/css/custom.css`：站点级视觉覆盖。
 - `layouts/`：站点级模板覆盖；不得复制并长期维护整套主题。
 - `scripts/`：无第三方依赖的维护与验证脚本。
@@ -32,6 +33,8 @@
 原生文章 front matter 使用：`title`、`date`、`lastmod`、`description`、`cover`、`categories`、`tags`、`draft`、`toc`。
 
 公众号条目 front matter 使用：`title`、`date`、`external_url`、`wechat_account`、`description`、`cover`、`categories`、`tags`、`draft`。
+
+公众号条目只保存公开元数据、人工摘要与原文链接，不复制公众号全文；`external_url` 必须是 `https://mp.weixin.qq.com/` 原文地址。
 
 项目人工覆盖字段固定为：`slug`、`category`、`featured`、`order`、`curator_summary`、`methods`、`cover`、`accent`。
 

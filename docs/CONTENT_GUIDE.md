@@ -20,7 +20,7 @@ hugo new content posts/article-slug/index.md
 hugo new content wechat/article-slug/index.md
 ```
 
-填写 `external_url`，并把 `wechat_account` 设置为“半导铁盒-硅迹”。正文只写摘要，不抓取或复制公众号全文。没有文章链接时保留空集合，不创建虚构条目。
+填写 `external_url`，并把 `wechat_account` 设置为“半导铁盒-硅迹”。正文只写摘要，不抓取或复制公众号全文。文章封面放入 `assets/images/wechat/<article-slug>.*`，在 `cover` 中填写相对 `assets/` 的路径；原文封面必须下载后自托管，不能在页面运行时引用微信图片。没有文章链接时保留空集合，不创建虚构条目。
 
 ## 维护项目画廊
 

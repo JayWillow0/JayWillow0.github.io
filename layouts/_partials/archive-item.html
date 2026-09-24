@@ -1,0 +1,14 @@
+{{ $coverPath := .Params.cover | default "/img/default.avif" }}
+{{ $coverURL := $coverPath | relURL }}
+{{ with resources.Get $coverPath }}
+  {{ $coverDisplay := .Fit "480x320 webp q82" }}
+  {{ $coverURL = $coverDisplay.RelPermalink }}
+{{ end }}
+<div class="article-sort-item">
+  <a class="article-sort-item-img" href="{{ .RelPermalink }}"><img src="{{ $coverURL }}" alt="{{ .Title }}" loading="lazy"></a>
+  <div class="article-sort-item-info">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <a class="article-sort-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Params.tags }}<div class="article-sort-item-tags">{{ range . }}<a class="article-meta__tags" href="{{ printf "/tags/%s/" (. | urlize) | relLangURL }}">#{{ . }}</a>{{ end }}</div>{{ end }}
+  </div>
+</div>

@@ -8,7 +8,23 @@
   {{ if .Pages }}
     <div class="wechat-grid">
       {{ range .Pages.ByDate.Reverse }}
-        <article class="wechat-card"><div class="wechat-card__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span>{{ .Params.wechat_account }}</span></div><h2>{{ .Title }}</h2><p>{{ .Description | default .Summary }}</p><a href="{{ .Params.external_url }}" target="_blank" rel="noopener noreferrer">阅读公众号原文 ↗</a></article>
+        {{ $article := . }}
+        <article class="wechat-card">
+          {{ with $article.Params.cover }}
+            {{ with resources.Get . }}
+              {{ $coverDisplay := .Fit "1200x620 webp q84" }}
+              <a class="wechat-card__cover" href="{{ $article.Params.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="阅读《{{ $article.Title }}》公众号原文">
+                <img src="{{ $coverDisplay.RelPermalink }}" width="{{ $coverDisplay.Width }}" height="{{ $coverDisplay.Height }}" loading="lazy" alt="《{{ $article.Title }}》文章封面">
+              </a>
+            {{ end }}
+          {{ end }}
+          <div class="wechat-card__body">
+            <div class="wechat-card__meta"><time datetime="{{ $article.Date.Format "2006-01-02" }}">{{ $article.Date.Format "2006.01.02" }}</time><span>{{ $article.Params.wechat_account }}</span></div>
+            <h2>{{ $article.Title }}</h2>
+            <p>{{ $article.Description | default $article.Summary }}</p>
+            <a href="{{ $article.Params.external_url }}" target="_blank" rel="noopener noreferrer">阅读公众号原文 ↗</a>
+          </div>
+        </article>
       {{ end }}
     </div>
   {{ else }}
