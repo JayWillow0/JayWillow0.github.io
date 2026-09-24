@@ -75,6 +75,20 @@ class ProjectContractTests(unittest.TestCase):
             self.assertTrue(cover.startswith("images/wechat/"))
             self.assertTrue((ROOT / "assets" / cover).is_file(), cover)
 
+    def test_about_publications_have_complete_doi_index(self):
+        source = (ROOT / "content" / "about" / "index.md").read_text(encoding="utf-8")
+        expected = {
+            "10.11949/0438-1157.20251355",
+            "10.1016/j.enconman.2023.116858",
+            "10.1016/j.ces.2022.118132",
+            "10.1016/j.apenergy.2022.118792",
+            "10.1016/j.ijhydene.2020.09.225",
+            "10.1016/j.ijhydene.2018.09.002",
+        }
+        actual = set(re.findall(r"https://doi\.org/([^\)]+)", source))
+        self.assertEqual(actual, expected)
+        self.assertEqual(source.count("**Yang L**"), len(expected))
+
 
 if __name__ == "__main__":
     unittest.main()

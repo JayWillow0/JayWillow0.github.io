@@ -512,6 +512,42 @@ i.fa-hashtag::before { content: "#"; }
 .about-content h2 { margin: 52px 0 18px; padding-top: 18px; border-top: 1px solid var(--lab-line); font-size: 1.75rem; }
 .about-content p,
 .about-content li { font-size: 1rem; line-height: 1.9; }
+.about-content ol { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: publication; }
+.about-content ol > li {
+  position: relative;
+  margin: 0;
+  padding: 24px 0 24px 58px;
+  border-top: 1px solid var(--lab-line);
+  counter-increment: publication;
+  font-size: .9rem;
+  line-height: 1.75;
+  letter-spacing: .01em;
+  text-align: left;
+}
+.about-content ol > li:last-child { border-bottom: 1px solid var(--lab-line); }
+.about-content ol > li p { font-size: inherit; line-height: inherit; text-align: left; }
+.about-content ol > li::before {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--lab-copper);
+  background: transparent;
+  content: counter(publication, decimal-leading-zero);
+  counter-increment: none;
+  font-family: var(--lab-mono);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: .06em;
+  text-align: left;
+  transition: none;
+}
+.about-content ol a[href^="https://doi.org/"] { color: var(--lab-blue); font-family: var(--lab-mono); font-size: .78rem; overflow-wrap: anywhere; }
 
 /* 404 */
 .error-page { min-height: calc(100vh - 76px); display: grid; grid-template-columns: 1fr .72fr; align-items: center; gap: 60px; }
@@ -605,6 +641,7 @@ i.fa-hashtag::before { content: "#"; }
   .about-layout { grid-template-columns: 1fr; }
   .about-identity { position: static; display: grid; grid-template-columns: 84px 1fr; column-gap: 18px; }
   .about-identity small { grid-column: 2; }
+  .about-content ol > li { padding-left: 42px; }
   .lab-empty { padding: 28px 22px; }
 }
 
