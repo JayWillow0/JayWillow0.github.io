@@ -2,7 +2,7 @@
 
 ## 项目目标
 
-本仓库是 `JayWillow0.github.io` 的 Hugo 源码。站点使用 Solitude 主题和 GitHub Pages，面向储能电化学、多物理场仿真与智能算法内容的长期发布。
+本仓库是 `JayWillow0.github.io` 的 Hugo 源码。站点使用 Solitude 主题和 GitHub Pages，面向能源电化学（储能电池与燃料电池）、多物理场仿真与智能算法内容的长期发布。
 
 ## 技术边界
 
