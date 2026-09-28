@@ -94,6 +94,7 @@ params:
       tags:
         enable: false
       siteinfo:
+        runtime: ""
         runtimeenable: false
     post:
       default:

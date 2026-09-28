@@ -102,6 +102,8 @@ i.fa-xmark::before { content: "×"; }
 i.fa-star::before { content: "★"; }
 i.fa-rss::before { content: "RSS"; font-size: .65em; }
 i.fa-github::before { content: "GH"; font-size: .68em; }
+i.fa-circle-half-stroke::before { content: "◐"; }
+i.fa-book::before { content: "▤"; }
 i.fa-folder-closed::before { content: "□"; }
 i.fa-clone::before { content: "◇"; }
 i.fa-tags::before,
@@ -335,7 +337,8 @@ i.fa-hashtag::before { content: "#"; }
 /* Common section typography */
 .research-index,
 .featured-projects,
-.lab-notes { padding: 96px 0; border-bottom: 1px solid var(--lab-line); }
+.lab-notes,
+.home-wechat { padding: 96px 0; border-bottom: 1px solid var(--lab-line); }
 
 .lab-section-heading { margin-bottom: 48px; }
 .lab-section-heading > p,
@@ -617,7 +620,8 @@ i.fa-hashtag::before { content: "#"; }
   .lab-hero__figure img { box-shadow: 10px 14px 0 color-mix(in srgb, var(--lab-blue) 9%, transparent); }
   .research-index,
   .featured-projects,
-  .lab-notes { padding: 72px 0; }
+  .lab-notes,
+  .home-wechat { padding: 72px 0; }
   .research-index__grid { grid-template-columns: 1fr; }
   .research-index__grid li,
   .research-index__grid li + li { min-height: 0; padding: 22px 0 28px; border-right: 0; border-bottom: 1px solid var(--lab-line); }

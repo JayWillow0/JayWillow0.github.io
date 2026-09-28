@@ -58,5 +58,36 @@
       <div class="lab-empty"><span>NOTEBOOK / 000</span><p>研究札记尚未发布。这里将记录模型假设、复现过程和工程判断。</p><a href="{{ "/posts/" | relURL }}">查看内容结构</a></div>
     {{ end }}
   </section>
+
+  {{ $wechat := first 2 (where site.RegularPages.ByDate.Reverse "Section" "wechat") }}
+  {{ if $wechat }}
+    <section class="home-wechat" aria-labelledby="home-wechat-title">
+      <header class="lab-section-heading lab-section-heading--split">
+        <div><p>WECHAT PUBLICATIONS</p><h2 id="home-wechat-title">公众号更新</h2></div>
+        <a href="{{ "/wechat/" | relURL }}">查看全部公众号文章 <span aria-hidden="true">→</span></a>
+      </header>
+      <div class="wechat-grid">
+        {{ range $wechat }}
+          {{ $article := . }}
+          <article class="wechat-card">
+            {{ with $article.Params.cover }}
+              {{ with resources.Get . }}
+                {{ $coverDisplay := .Fit "1200x620 webp q84" }}
+                <a class="wechat-card__cover" href="{{ $article.Params.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="阅读《{{ $article.Title }}》公众号原文">
+                  <img src="{{ $coverDisplay.RelPermalink }}" width="{{ $coverDisplay.Width }}" height="{{ $coverDisplay.Height }}" loading="lazy" alt="《{{ $article.Title }}》文章封面">
+                </a>
+              {{ end }}
+            {{ end }}
+            <div class="wechat-card__body">
+              <div class="wechat-card__meta"><time datetime="{{ $article.Date.Format "2006-01-02" }}">{{ $article.Date.Format "2006.01.02" }}</time><span>{{ $article.Params.wechat_account }}</span></div>
+              <h2>{{ $article.Title }}</h2>
+              <p>{{ $article.Description | default $article.Summary }}</p>
+              <a href="{{ $article.Params.external_url }}" target="_blank" rel="noopener noreferrer">阅读公众号原文 ↗</a>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
 </main>
 {{ end }}
