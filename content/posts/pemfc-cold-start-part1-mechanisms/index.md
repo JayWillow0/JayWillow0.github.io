@@ -2,8 +2,9 @@
 title: "燃料电池冷启动复现札记（一）· 解构 Huo 2019 的水热机理与公式"
 slug: pemfc-cold-start-part1-mechanisms
 date: 2026-09-28T15:30:00+08:00
-lastmod: 2026-09-28T15:30:00+08:00
+lastmod: 2026-09-29T00:00:00+08:00
 description: "出于兴趣重读 Huo 等 2019 年 PEMFC 冷启动一维模型，补上读博时期没想完的部分。拆五种水状态与源项网络，逐式核对量纲、单位与参数表，记录手算数量级检查和留给 Python 实现的缺口。"
+cover: "/posts/pemfc-cold-start-part1-mechanisms/pemfc-cold-start-water-thermal-network.jpg"
 categories: ["电化学仿真与优化"]
 tags: ["燃料电池", "冷启动", "PEMFC", "论文复现"]
 draft: false
