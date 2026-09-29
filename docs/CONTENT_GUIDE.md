@@ -12,6 +12,8 @@ hugo new content posts/article-slug/index.md
 
 补全标题、日期、摘要、分类和标签，将 `draft` 改为 `false`。文章图片放在同一页面包内，例如 `content/posts/article-slug/model-result.webp`，正文使用 `![说明](model-result.webp)`。
 
+正文含 LaTeX 数学公式时，front matter 加 `math: true`，公式用 `$...$`（行内）和 `$$...$$`（独立成段）书写。Goldmark passthrough 会把公式原文交给页面内自托管的 KaTeX 渲染，资源位于 `static/katex/`，不引入外部 CDN。升级 KaTeX 时从 npm 发行包重新拷贝 `katex.min.css`、`katex.min.js`、`contrib/auto-render.min.js` 和 `fonts/*.woff2`，并回归检查公式渲染。permalink 使用 `:slug`，front matter 需显式写 `slug`（与目录名一致），否则 URL 会回落成中文标题转写。
+
 ## 新增公众号文章
 
 当前公众号 ID 为“半导铁盒-硅迹”，由 `content/wechat/_index.md` 的 `wechat_account` 字段统一维护。

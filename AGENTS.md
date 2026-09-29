@@ -9,7 +9,7 @@
 - Hugo 固定使用 `0.166.0`，不要改为浮动的 `latest`。
 - Solitude 通过 Git submodule 固定版本，禁止直接编辑 `themes/solitude/`。
 - 站点必须保持纯静态，不引入服务器、数据库、商业 CMS 或运行时 API 请求。
-- 不启用第三方评论、统计、音乐、远程字体或前端 CDN。
+- 不启用第三方评论、统计、音乐、远程字体或前端 CDN。数学公式使用自托管 KaTeX（`static/katex/`），正文含公式的页面在 front matter 加 `math: true`。
 - 代码高亮使用 Hugo 内置 Chroma。
 
 ## 目录约定
@@ -22,6 +22,7 @@
 - `assets/images/projects/<repo-slug>.*`：项目封面与科研示意图。
 - `assets/images/wechat/<article-slug>.*`：公众号文章封面；从原文获取后自托管，不运行时引用微信图片。
 - `assets/css/custom.css`：站点级视觉覆盖。
+- `static/katex/`：自托管 KaTeX 静态资源，只提交 woff2 字体，从 npm 发行包更新。
 - `layouts/`：站点级模板覆盖；不得复制并长期维护整套主题。
 - `scripts/`：无第三方依赖的维护与验证脚本。
 - `tests/`：脚本和数据契约测试。
@@ -30,7 +31,7 @@
 
 ## 内容契约
 
-原生文章 front matter 使用：`title`、`date`、`lastmod`、`description`、`cover`、`categories`、`tags`、`draft`、`toc`。
+原生文章 front matter 使用：`title`、`slug`（与目录名一致）、`date`、`lastmod`、`description`、`cover`、`categories`、`tags`、`draft`、`toc`、`math`。
 
 公众号条目 front matter 使用：`title`、`date`、`external_url`、`wechat_account`、`description`、`cover`、`categories`、`tags`、`draft`。
 
