@@ -50,10 +50,29 @@
   </section>
 
   <section class="lab-notes" aria-labelledby="lab-notes-title">
-    <header class="lab-section-heading"><p>FIELD NOTES</p><h2 id="lab-notes-title">研究札记</h2></header>
+    <header class="lab-section-heading lab-section-heading--split">
+      <div><p>FIELD NOTES</p><h2 id="lab-notes-title">研究札记</h2></div>
+      <a href="{{ "/posts/" | relURL }}">查看全部研究札记 <span aria-hidden="true">→</span></a>
+    </header>
     {{ $posts := first 3 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
     {{ if $posts }}
-      <div class="note-list">{{ range $posts }}<article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Description }}</p></article>{{ end }}</div>
+      <div class="note-list note-list--home">
+        {{ range $index, $post := $posts }}
+          <article{{ if and (eq $index 0) $post.Params.cover }} class="note-list__item--featured"{{ end }}>
+            <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "2006.01.02" }}</time>
+            <div class="note-list__body">
+              <h3><a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h3>
+              <p>{{ $post.Description }}</p>
+              <a class="note-list__read" href="{{ $post.RelPermalink }}">阅读全文 <span aria-hidden="true">→</span></a>
+            </div>
+            {{ if and (eq $index 0) $post.Params.cover }}
+              <a class="note-list__cover" href="{{ $post.RelPermalink }}" aria-label="阅读《{{ $post.Title }}》">
+                <img src="{{ $post.Params.cover | relURL }}" loading="lazy" alt="《{{ $post.Title }}》封面">
+              </a>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
     {{ else }}
       <div class="lab-empty"><span>NOTEBOOK / 000</span><p>研究札记尚未发布。这里将记录模型假设、复现过程和工程判断。</p><a href="{{ "/posts/" | relURL }}">查看内容结构</a></div>
     {{ end }}
