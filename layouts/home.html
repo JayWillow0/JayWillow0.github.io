@@ -78,7 +78,7 @@
     {{ end }}
   </section>
 
-  {{ $wechat := first 2 (where site.RegularPages.ByDate.Reverse "Section" "wechat") }}
+  {{ $wechat := first 3 (where site.RegularPages.ByDate.Reverse "Section" "wechat") }}
   {{ if $wechat }}
     <section class="home-wechat" aria-labelledby="home-wechat-title">
       <header class="lab-section-heading lab-section-heading--split">
