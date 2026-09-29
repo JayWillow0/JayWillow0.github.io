@@ -6,7 +6,7 @@ lastmod: 2026-09-28T15:30:00+08:00
 description: "出于兴趣重读 Huo 等 2019 年 PEMFC 冷启动一维模型，补上读博时期没想完的部分。拆五种水状态与源项网络，逐式核对量纲、单位与参数表，记录手算数量级检查和留给 Python 实现的缺口。"
 categories: ["电化学仿真与优化"]
 tags: ["燃料电池", "冷启动", "PEMFC", "论文复现"]
-draft: true
+draft: false
 toc: true
 math: true
 ---
