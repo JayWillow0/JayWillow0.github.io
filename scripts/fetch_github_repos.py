@@ -19,6 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SNAPSHOT = ROOT / "data" / "generated" / "github_repos.json"
 DEFAULT_USERNAME = "JayWillow0"
 USER_AGENT = "LiuYang-Lab-site-builder/1.0"
+# 画廊只收作品集项目；本站仓库自指，按 AGENTS.md 契约排除。
+EXCLUDED_REPOS = frozenset({"JayWillow0.github.io"})
 
 
 class SnapshotError(RuntimeError):
@@ -56,6 +58,8 @@ def filter_original(repos: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     originals = []
     for repo in repos:
         if repo.get("fork") or repo.get("archived"):
+            continue
+        if repo.get("name") in EXCLUDED_REPOS:
             continue
         originals.append(normalize_repo(repo))
     return sorted(originals, key=lambda item: item["name"].casefold())
@@ -112,6 +116,8 @@ def validate_snapshot(repos: Any) -> list[dict[str, Any]]:
         raise SnapshotError("snapshot contains duplicate repository names")
     if any(repo["fork"] for repo in normalized):
         raise SnapshotError("snapshot must not contain forked repositories")
+    if any(repo["name"] in EXCLUDED_REPOS for repo in normalized):
+        raise SnapshotError("snapshot must not contain excluded repositories")
     return sorted(normalized, key=lambda item: item["name"].casefold())
 
 

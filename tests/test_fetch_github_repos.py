@@ -53,6 +53,19 @@ class FetchRepositoriesTests(unittest.TestCase):
         self.assertEqual([item["name"] for item in result], ["Owned"])
         self.assertEqual(result[0]["description"], "")
 
+    def test_filter_excludes_site_repository(self):
+        result = MODULE.filter_original(
+            [repo("Owned"), repo("JayWillow0.github.io")]
+        )
+        self.assertEqual([item["name"] for item in result], ["Owned"])
+
+    def test_snapshot_rejects_excluded_repository(self):
+        records = MODULE.filter_original([repo("Owned")]) + [
+            repo("JayWillow0.github.io")
+        ]
+        with self.assertRaises(MODULE.SnapshotError):
+            MODULE.validate_snapshot(records)
+
     def test_fetch_follows_pagination(self):
         responses = iter(
             [

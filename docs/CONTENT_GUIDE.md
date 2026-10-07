@@ -12,6 +12,8 @@ hugo new content posts/article-slug/index.md
 
 补全标题、日期、摘要、分类和标签，将 `draft` 改为 `false`。文章图片放在同一页面包内，例如 `content/posts/article-slug/model-result.webp`，正文使用 `![说明](model-result.webp)`。
 
+系列文章在 front matter 加 `series: [<系列名>]`（数组形式，同系列各篇必须完全一致），并在正文适当位置（通常是开篇导语之后）插入 `{{< series name="<系列名>" >}}`（name 必须显式传，裸调用与数组参数不兼容），页面会按日期自动列出全系列链接，无需手工维护清单。
+
 正文含 LaTeX 数学公式时，front matter 加 `math: true`，公式用 `$...$`（行内）和 `$$...$$`（独立成段）书写。Goldmark passthrough 会把公式原文交给页面内自托管的 KaTeX 渲染，资源位于 `static/katex/`，不引入外部 CDN。公式里的小于号必须写成 `\lt`，不能写裸 `<`；KaTeX 在页面加载后才运行，浏览器会先把 `<字母` 序列解析成 HTML 标签，公式即被破坏。升级 KaTeX 时从 npm 发行包重新拷贝 `katex.min.css`、`katex.min.js`、`contrib/auto-render.min.js` 和 `fonts/*.woff2`，并回归检查公式渲染。permalink 使用 `:slug`，front matter 需显式写 `slug`（与目录名一致），否则 URL 会回落成中文标题转写。
 
 ## 新增公众号文章
@@ -37,7 +39,7 @@ GitHub 仓库基础信息由 `scripts/fetch_github_repos.py` 获取。人工策�
 - `cover` 是 `assets/` 下的相对路径。
 - `accent` 使用十六进制颜色。
 
-新增原创仓库会自动进入“待策展”区域。补齐覆盖数据和封面后，它会进入正式分类。
+新增原创仓库会自动进入“待策展”区域。补齐覆盖数据和封面后，它会进入正式分类。本站仓库 `JayWillow0.github.io` 被 `EXCLUDED_REPOS` 按名排除，不进入快照；其余排除需求先改 AGENTS.md 契约再改脚本。
 
 ## 新增页面
 

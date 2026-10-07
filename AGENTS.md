@@ -31,7 +31,7 @@
 
 ## 内容契约
 
-原生文章 front matter 使用：`title`、`slug`（与目录名一致）、`date`、`lastmod`、`description`、`cover`、`categories`、`tags`、`draft`、`toc`、`math`。
+原生文章 front matter 使用：`title`、`slug`（与目录名一致）、`date`、`lastmod`、`description`、`cover`、`categories`、`tags`、`draft`、`toc`、`math`。系列文章额外使用可选的 `series`（数组形式，同系列各篇含同一系列名，如 `series: ["系列名"]`），并在正文需要展示系列目录处插入 `{{< series name="系列名" >}}` shortcode（name 必须显式传，裸调用的默认值与数组参数不兼容）。
 
 公众号条目 front matter 使用：`title`、`date`、`external_url`、`wechat_account`、`description`、`cover`、`categories`、`tags`、`draft`。
 
@@ -44,6 +44,7 @@
 - 站点正文、标签、配置与生成页面不得出现特定商业多物理场软件的品牌名，统一写作“电化学仿真”“电化学与热仿真”或“多物理场仿真”。
 - 新页面必须同时检查桌面端、平板、390px 移动端、键盘焦点、明暗模式和 `prefers-reduced-motion`。
 - 新原创仓库即使没有人工策展信息，也必须出现在“待策展”区域。
+- 本站仓库 `JayWillow0.github.io` 不是画廊项目，抓取脚本按名排除（排除名单以 `scripts/fetch_github_repos.py` 的 `EXCLUDED_REPOS` 为准），不进入快照，也不出现在“待策展”。
 - GitHub API 不可用时必须回退到已提交的数据快照，不能阻断部署。
 - 所有外部链接使用 HTTPS；新标签页链接必须包含 `rel="noopener noreferrer"`。
 - 不提交密钥、token、密码、个人隐私数据或本地绝对路径。
