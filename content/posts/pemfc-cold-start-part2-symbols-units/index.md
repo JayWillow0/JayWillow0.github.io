@@ -7,7 +7,7 @@ description: "动 Python 之前先立符号与单位的账。用一张转换表�
 categories: ["电化学仿真与优化"]
 tags: ["燃料电池", "冷启动", "PEMFC", "论文复现", "数值实现"]
 series: ["燃料电池冷启动复现札记"]
-draft: true
+draft: false
 toc: true
 math: true
 ---
