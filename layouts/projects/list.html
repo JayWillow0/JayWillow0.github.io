@@ -20,7 +20,13 @@
         <div class="project-grid">
           {{ range $items }}
             {{ $curation := . }}
-            {{ range first 1 (where $repos "name" .slug) }}{{ partial "lab/project-card.html" (dict "repo" . "curation" $curation) }}{{ end }}
+            {{ range first 1 (where $repos "name" .slug) }}
+              {{ if $curation.subprojects }}
+                {{ partial "lab/project-collection.html" (dict "repo" . "curation" $curation) }}
+              {{ else }}
+                {{ partial "lab/project-card.html" (dict "repo" . "curation" $curation) }}
+              {{ end }}
+            {{ end }}
           {{ end }}
         </div>
       </section>

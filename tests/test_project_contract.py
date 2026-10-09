@@ -41,18 +41,29 @@ class ProjectContractTests(unittest.TestCase):
             (ROOT / "data" / "generated" / "github_repos.json").read_text(encoding="utf-8")
         )
         overrides = (ROOT / "data" / "project_overrides.yaml").read_text(encoding="utf-8")
-        curated = set(re.findall(r"^\s+- slug:\s*(.+?)\s*$", overrides, re.MULTILINE))
+        curated = set(re.findall(r"^  - slug:\s*(.+?)\s*$", overrides, re.MULTILINE))
         originals = {repo["name"] for repo in snapshot if not repo.get("fork")}
         self.assertTrue(curated.issubset(originals))
         self.assertEqual(len(curated), 8)
 
     def test_project_covers_follow_asset_convention(self):
         overrides = (ROOT / "data" / "project_overrides.yaml").read_text(encoding="utf-8")
+        top_level_covers = re.findall(r"^    cover:\s*(.+?)\s*$", overrides, re.MULTILINE)
         covers = re.findall(r"^\s+cover:\s*(.+?)\s*$", overrides, re.MULTILINE)
-        self.assertEqual(len(covers), 8)
+        self.assertEqual(len(top_level_covers), 8)
+        self.assertEqual(len(covers), 11)
         for cover in covers:
             self.assertTrue(cover.startswith("images/projects/"))
             self.assertTrue((ROOT / "assets" / cover).is_file(), cover)
+
+    def test_paper_reproduce_subprojects_follow_contract(self):
+        overrides = (ROOT / "data" / "project_overrides.yaml").read_text(encoding="utf-8")
+        subproject_block = overrides.split("    subprojects:\n", 1)[1].split("  - slug: ml-dev", 1)[0]
+        slugs = re.findall(r"^      - slug:\s*(.+?)\s*$", subproject_block, re.MULTILINE)
+        paths = re.findall(r"^        path:\s*(.+?)\s*$", subproject_block, re.MULTILINE)
+        self.assertEqual(slugs, ["te-method-audit", "thermal-runaway-propagation", "pemfc-cold-start"])
+        self.assertEqual(paths, ["TE-paper", "TRSim-paper", "AE-pemfc-paper"])
+        self.assertNotIn("/Users/", subproject_block)
 
     def test_published_wechat_articles_follow_content_contract(self):
         expected = {

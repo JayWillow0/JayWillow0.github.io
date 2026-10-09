@@ -1,0 +1,39 @@
+{{ $repo := .repo }}
+{{ $curation := .curation }}
+<section class="project-collection" data-project-slug="{{ $repo.name }}" style="--project-accent: {{ $curation.accent | default "#5A6672" }}" aria-labelledby="collection-{{ $repo.name | anchorize }}">
+  <header class="project-collection__header">
+    <div>
+      <p class="project-collection__eyebrow">REPRODUCTION DOSSIER · {{ printf "%02d" (len $curation.subprojects) }} STUDIES</p>
+      <h3 id="collection-{{ $repo.name | anchorize }}">按论文拆分的复现实验档案</h3>
+      <p>{{ $curation.curator_summary }}</p>
+    </div>
+    <div class="project-collection__repo">
+      <span>{{ $repo.language | default "Research" }} · {{ with $repo.updated_at }}更新于 {{ (time.AsTime .).Format "2006.01.02" }}{{ end }}</span>
+      <a href="{{ $repo.url }}" target="_blank" rel="noopener noreferrer">查看总仓库 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <div class="project-collection__grid">
+    {{ range $index, $subproject := $curation.subprojects }}
+      {{ $cover := resources.Get $subproject.cover }}
+      {{ $coverDisplay := $cover.Fill "960x640 webp q82" }}
+      {{ $url := printf "%s/tree/main/%s" $repo.url $subproject.path }}
+      <article class="project-subcard" data-subproject-slug="{{ $subproject.slug }}" style="--project-accent: {{ $subproject.accent | default $curation.accent }}">
+        <a class="project-subcard__cover" href="{{ $url }}" target="_blank" rel="noopener noreferrer" aria-label="打开 {{ $subproject.title }} 子项目">
+          {{ with $coverDisplay }}<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" alt="{{ $subproject.title }} 科研示意图">{{ end }}
+          <span class="project-subcard__index">{{ printf "%02d" (add $index 1) }}</span>
+          <span class="project-subcard__status">{{ $subproject.status }}</span>
+        </a>
+        <div class="project-subcard__body">
+          <p class="project-subcard__kicker">{{ $subproject.kicker }}</p>
+          <h4><a href="{{ $url }}" target="_blank" rel="noopener noreferrer">{{ $subproject.title }}</a></h4>
+          <p>{{ $subproject.curator_summary }}</p>
+          <ul class="method-list" aria-label="子项目方法">
+            {{ range $subproject.methods }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          <a class="project-subcard__link" href="{{ $url }}" target="_blank" rel="noopener noreferrer">进入子项目 <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>

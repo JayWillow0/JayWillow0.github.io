@@ -37,7 +37,7 @@
 
 公众号条目只保存公开元数据、人工摘要与原文链接，不复制公众号全文；`external_url` 必须是 `https://mp.weixin.qq.com/` 原文地址。
 
-项目人工覆盖字段固定为：`slug`、`category`、`featured`、`order`、`curator_summary`、`methods`、`cover`、`accent`。
+项目人工覆盖字段固定为：`slug`、`category`、`featured`、`order`、`curator_summary`、`methods`、`cover`、`accent`。聚合型仓库可增加可选的 `subprojects` 数组，数组项字段固定为：`slug`、`title`、`kicker`、`status`、`curator_summary`、`methods`、`cover`、`path`、`accent`；`path` 必须是该子项目在仓库默认分支下的相对目录，不保存本地绝对路径。
 
 ## 实现纪律
 

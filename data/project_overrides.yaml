@@ -51,10 +51,38 @@ projects:
     category: 科研复现与工程化
     featured: false
     order: 70
-    curator_summary: 集中维护论文复现代码和实验记录，把公式、数据处理和结果核对组织成可重复执行的研究资产。
+    curator_summary: 一组按论文独立归档的复现工程，用统一目录、固定输入哈希和可追溯实验记录区分“代码可运行”与“结论已验证”。
     methods: [Reproduction, Verification, Python]
     cover: images/projects/paper-reproduce.png
     accent: "#5A6672"
+    subprojects:
+      - slug: te-method-audit
+        title: 电池热化学预测的验证协议审计
+        kicker: BATTERY THERMOCHEMICAL ML
+        status: 部分复现 · 审计完成
+        curator_summary: 用同一组模型权重比较随机切片、整电池留出与邻片剔除，检查验证协议究竟测到了插值能力，还是跨电池泛化能力。
+        methods: [PyTorch, Grouped Validation, Leakage Audit]
+        cover: images/projects/paper-reproduce-te-method.png
+        path: TE-paper
+        accent: "#28536B"
+      - slug: thermal-runaway-propagation
+        title: 25 Ah 电池模组热失控传播复现
+        kicker: THERMAL RUNAWAY PROPAGATION
+        status: Fig.10–19 · 全量复现
+        curator_summary: 独立实现六反应动力学与分段积分求解器，重建绝热温升、单电池触发、六电池传播及四组关键因素研究。
+        methods: [SciPy, Reaction Kinetics, Event Solver]
+        cover: images/projects/paper-reproduce-trsim.png
+        path: TRSim-paper
+        accent: "#B65C32"
+      - slug: pemfc-cold-start
+        title: 燃料电池冷启动一维多层模型复现
+        kicker: COLD-START MULTIPHASE MODEL
+        status: Fig.4/5/8/9 · 有限校准
+        curator_summary: 以守恒型有限体积法重建多层冷启动模型，追踪水的气、液、冰相转化，并把直接预测、数值修复和有限校准分开登记。
+        methods: [Finite Volume, Phase Change, Stiff ODE]
+        cover: images/projects/paper-reproduce-pemfc-cold-start.png
+        path: AE-pemfc-paper
+        accent: "#3B88A8"
   - slug: ml-dev
     category: 科研复现与工程化
     featured: false
