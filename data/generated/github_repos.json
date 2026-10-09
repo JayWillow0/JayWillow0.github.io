@@ -45,6 +45,22 @@
     "fork": false
   },
   {
+    "name": "django-ml-platform",
+    "url": "https://github.com/JayWillow0/django-ml-platform",
+    "description": "基于 Django + Celery 的机器学习平台：数据管理、预处理、批量训练、任务对比与在线预测",
+    "language": "JavaScript",
+    "topics": [
+      "bootstrap",
+      "djiango",
+      "html-css-javascript",
+      "machine-learning"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "updated_at": "2026-10-09T13:50:43Z",
+    "fork": false
+  },
+  {
     "name": "ElectrodeReconstruction-matlab",
     "url": "https://github.com/JayWillow0/ElectrodeReconstruction-matlab",
     "description": "本仓库为 MATLAB 实现，研究对象为磷酸铁锂（LFP）储能电池电极，工艺变量覆盖辊压间隙、组分配比与初始孔隙率",
@@ -94,7 +110,7 @@
     "topics": [],
     "stars": 0,
     "forks": 0,
-    "updated_at": "2026-09-24T06:34:43Z",
+    "updated_at": "2026-10-09T07:26:40Z",
     "fork": false
   },
   {

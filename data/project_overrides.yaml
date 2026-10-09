@@ -87,7 +87,15 @@ projects:
     category: 科研复现与工程化
     featured: false
     order: 80
-    curator_summary: 记录机器学习平台的开发过程，以可运行页面串联需求、实现、验证和迭代决策。
+    curator_summary: 记录机器学习平台的开发过程，以可运行页面串联需求、实现、验证和迭代决策，平台代码见 django-ml-platform。
     methods: [Django, ML Platform, Engineering Log]
     cover: images/projects/ml-dev.png
     accent: "#28536B"
+  - slug: django-ml-platform
+    category: 科研复现与工程化
+    featured: false
+    order: 90
+    curator_summary: ml-dev 开发日志对应的平台本体：Django 承担数据管理与页面，Celery 调度预处理、批量训练与在线预测，训练任务以统一视图横向对比。
+    methods: [Django, Celery, ML Pipeline]
+    cover: images/projects/django-ml-platform.png
+    accent: "#B65C32"

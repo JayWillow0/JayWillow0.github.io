@@ -44,14 +44,14 @@ class ProjectContractTests(unittest.TestCase):
         curated = set(re.findall(r"^  - slug:\s*(.+?)\s*$", overrides, re.MULTILINE))
         originals = {repo["name"] for repo in snapshot if not repo.get("fork")}
         self.assertTrue(curated.issubset(originals))
-        self.assertEqual(len(curated), 8)
+        self.assertEqual(len(curated), 9)
 
     def test_project_covers_follow_asset_convention(self):
         overrides = (ROOT / "data" / "project_overrides.yaml").read_text(encoding="utf-8")
         top_level_covers = re.findall(r"^    cover:\s*(.+?)\s*$", overrides, re.MULTILINE)
         covers = re.findall(r"^\s+cover:\s*(.+?)\s*$", overrides, re.MULTILINE)
-        self.assertEqual(len(top_level_covers), 8)
-        self.assertEqual(len(covers), 11)
+        self.assertEqual(len(top_level_covers), 9)
+        self.assertEqual(len(covers), 12)
         for cover in covers:
             self.assertTrue(cover.startswith("images/projects/"))
             self.assertTrue((ROOT / "assets" / cover).is_file(), cover)
