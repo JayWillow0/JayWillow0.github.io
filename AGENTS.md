@@ -6,7 +6,7 @@
 
 ## 技术边界
 
-- Hugo 固定使用 `0.166.0`，不要改为浮动的 `latest`。
+- Hugo 固定使用 `0.166.0`，不要改为浮动的 `latest`。本地构建统一走 `./scripts/hugo.sh`（封装本地 docker 镜像 `hugo:0.166.0`，标准版静态二进制；镜像与 tarball 均常驻本机，不依赖外部镜像仓库），CI 中由 workflow 自行安装同版本。若未来引入 SCSS 再重新评估镜像形态。
 - Solitude 通过 Git submodule 固定版本，禁止直接编辑 `themes/solitude/`。
 - 站点必须保持纯静态，不引入服务器、数据库、商业 CMS 或运行时 API 请求。
 - 不启用第三方评论、统计、音乐、远程字体或前端 CDN。数学公式使用自托管 KaTeX（`static/katex/`），正文含公式的页面在 front matter 加 `math: true`。
@@ -24,7 +24,8 @@
 - `assets/css/custom.css`：站点级视觉覆盖。
 - `static/katex/`：自托管 KaTeX 静态资源，只提交 woff2 字体，从 npm 发行包更新。
 - `layouts/`：站点级模板覆盖；不得复制并长期维护整套主题。
-- `scripts/`：无第三方依赖的维护与验证脚本。
+- `scripts/`：无第三方依赖的维护与验证脚本；`scripts/hugo.sh` 是本地构建入口，封装固定版本的 docker 镜像。
+- `docker/hugo/`：本地 Hugo 运行镜像的构建文件与说明，不依赖外部镜像仓库。
 - `tests/`：脚本和数据契约测试。
 - `.github/workflows/`：GitHub Pages 构建、验证与部署流程；固定工具版本，不在工作流中回写源码分支。
 - `public/`、`resources/`：构建产物，不提交。
@@ -55,7 +56,7 @@
 ```bash
 python3 -m unittest discover -s tests
 python3 scripts/fetch_github_repos.py --offline
-hugo --gc --minify --panicOnWarning
+./scripts/hugo.sh --gc --minify --panicOnWarning
 python3 scripts/check_site.py public
 ```
 
