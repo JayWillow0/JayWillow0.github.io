@@ -2,8 +2,9 @@
 title: "燃料电池冷启动复现札记（二）· 符号转换表与 SI 摩尔基准"
 slug: pemfc-cold-start-part2-symbols-units
 date: 2026-10-07T22:30:00+08:00
-lastmod: 2026-10-07T22:30:00+08:00
+lastmod: 2026-10-09T00:00:00+08:00
 description: "动 Python 之前先立符号与单位的账。用一张转换表接住原文三套互相打架的正负号约定，把反应计量与相变速率整套搬到 SI 摩尔基准，给每个参数挂上来源身份，再用计量矩阵配平和手算数量级把这套规矩先验一遍。"
+cover: "/posts/pemfc-cold-start-part2-symbols-units/pemfc-cold-start-symbols-si-basis.jpg"
 categories: ["电化学仿真与优化"]
 tags: ["燃料电池", "冷启动", "PEMFC", "论文复现", "数值实现"]
 series: ["燃料电池冷启动复现札记"]
